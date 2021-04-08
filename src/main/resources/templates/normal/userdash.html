@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::div})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h2>Hi <span th:text="${userName}"></span></h2>
+		<div class="row">
+			<div class="col-md-4 p-3 col-sm-12 userblock">
+					<form th:action="@{/user/savePass}" method="post" th:object="${contact}">
+					  <div class="md-3">
+					    <label for="exampleInputEmail1" class="form-label">Web-Site Name</label>
+					    <input type="text" name="cname" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp">
+					    
+					  </div>
+					  <div class="md-3">
+					    <label for="exampleInputPassword1" class="form-label">Password</label>
+					    <input type="password" required name="password" class="form-control" id="exampleInputPassword1">
+					    <div id="emailHelp" class="form-text">We save U r Passwords in Crypted way</div>
+					  </div>
+					  <button type="submit" class="btn btn-acc">Submit</button>
+					</form>
+			</div>
+			<div class="col-md-4 p-3 col-sm-12">
+			<h3>Generate Strong Password with us.</h3>
+				<form method="get" th:action="@{/user/generator}">
+					  <div class="md-3">
+					    <label for="exampleInputPassword1" class="form-label">Enter the Length of Password</label>
+					    <input type="number" name="password" class="form-control" id="exampleInputPassword1"><br/>
+					  </div>
+					  <button type="submit" class="btn btn-acc">Submit</button>
+					</form>
+			</div>
+			<div class="col-md-4 p-3 col-sm-12 userblock">
+				<div class="block">
+					<h3>Your Saved Passwords</h3>
+					<i>You can view your all saved passwords using your password.</i>
+					<a  th:href="@{allpass/0}">View</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

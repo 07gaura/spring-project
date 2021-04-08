@@ -1,0 +1,76 @@
+.cont1{
+	height:800px;
+}
+
+.userblock{
+	background-color:black;
+	color:white;
+	border-radius:10px;
+}
+
+.demo-content{
+	height:600px;
+	text-align:center;
+	margin-top:200px;
+}
+
+.demo-content h1{
+	font-size:100px;
+}
+
+/* passpage */
+.h4{
+	height:400px;
+}
+
+.signsup{
+	width:100%;
+	height: 500px;
+	padding:40px;
+}
+
+.signsup h1{
+	color:#b900fc;
+}
+
+.loginh1{
+	height:600px;
+}
+
+.loginh1 h1{
+	color:#b900fc;
+}
+
+.loginmar{
+	margin-top:35px;
+}
+
+.btn-acc{
+	background-color: #b900fc !important;
+	color:white !important;
+}
+
+.singupcont{
+	width:100%;
+	display: block;
+	margin-left: 20px;
+	margin-top:30%;
+}
+
+.allpassblock{
+	padding:30px;
+	background-color:#b900fc;
+	text-align:center;
+	color:white;
+	border-radius:10px;
+	margin:10px;
+}	
+
+.allpassblock a{
+	color:white !important;
+}
+
+.confr{
+	height:600px;
+	color:#b900fc;
+}

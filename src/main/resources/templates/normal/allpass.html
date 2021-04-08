@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::div})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container ">
+		<div class="row justify-content-center" >
+			<h2>Your Saved Passwords</h2>
+			<i>Click on eye to see your password, to update press on pen icon</i>
+			<div class="col-md-3" th:each="c:${contacts}" >			
+				<div class="allpassblock">
+					<h6 th:text="${c.cname}"></h6>
+					<a th:with="a=${c.cid}" th:href="@{/user/confirm(num=${a})}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+					<a th:with="a=${c.cid}" th:href="@{'/user/update-form/'+${a}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+		<nav aria-label="Page navigation example justify-content-center">
+		  <ul class="pagination">
+		    <li th:classappend="${currentPage+1!=0?'disabled':''}" class="page-item"><a class="page-link" href="@{'/user/allpass/'+${currentPage+1}}">Previous</a></li>
+		    <li th:classappend="${currentPage==i-1?'active':''}" th:each="i:${#numbers.sequence(1,totalPages)}" class="page-item"><a class="page-link" href="@{'/user/allpass/'+${i}}"><span th:text="${i}"></span></a></li>
+		    <li th:classappend="${currentPage+1!=totalPage?'disabled':''}" class="page-item"><a class="page-link" href="@{'/user/allpass/'+${currentPage+1}}">Next</a></li>
+		  </ul>
+		</nav>
+	</div>
+</body>
+</html>

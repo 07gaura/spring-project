@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::div})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container-fluid cont1">
+        <div class="row justify-content-center align-items-center confr">
+            <div class="col-sm-4 col-md-4">
+            <h1>Update details</h1>            
+                <div class="login-content" >
+                	<form th:action="@{/user/updatecomplete}" method="post" th:object="${contact}">
+					  <div class="md-3">
+					 	 <input hidden type="text" th:value="${contact.cid}" name="cid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					    <label for="exampleInputEmail1" class="form-label">Web-Site Name</label>
+					    <input type="text" th:value="${contact.cname}" name="cname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					    
+					  </div>
+					  <div class="md-3">
+					    <label for="exampleInputPassword1" class="form-label">Password</label>
+					    <input type="password" name="password" th:value="${contact.password}" class="form-control" id="exampleInputPassword1">
+					    <div id="emailHelp" class="form-text">We save U r Passwords in Crypted way</div>
+					  </div>
+					  <button type="submit" class="btn btn-acc">Submit</button>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+</body>
+</html>

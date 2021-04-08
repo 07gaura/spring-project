@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::div})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container cont1">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+            	<div class="signsup">
+            		<h1>Register here</h1>
+	            	<div th:if="${session.message}" th:class="${session.message.type}" class="alert" role="alert">
+	            		<p class="text-center" th:text="${session.message.content}"></p>
+	            		<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+	            	</div>
+	                <div class="login-content loginmar" >
+	                	<form action="register" method="post" th:object="${user}">
+	                		<div class="mb-3">							   
+							    <input type="text" placeholder="UserName" th:classappend="${#fields.hasErrors('name')?'is-invalid':''}" th:value="${user.name}" class="form-control" name="name"  id="floatingInput" aria-describedby="emailHelp">						    
+							  </div>
+							  <div class="mb-3">							   
+							    <input type="email" placeholder="Email" th:value="${user.email}" th:classappend="${#fields.hasErrors('email')?'is-invalid':''}" class="form-control" name="email" id="floatingInput" aria-describedby="emailHelp">
+							    
+							  </div>
+							  <div class="mb-3">
+							    <input type="password" placeholder="Password" th:classappend="${#fields.hasErrors('password')?'is-invalid':''}" class="form-control" name="password" id="floatingInput">
+							  </div>
+							  <div class="form-floating">
+								  <textarea class="form-control" th:classappend="${#fields.hasErrors('about')?'is-invalid':''}" th:value="${user.about}" name="about" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+								  <label for="floatingTextarea2">About Us</label>
+								</div>
+							  <div class="mb-3 form-check">
+							    <input type="checkbox" name="agreement" class="form-check-input" id="exampleCheck1">
+							    <label class="form-check-label" for="exampleCheck1">Terms and condition agreement</label>
+							  </div>
+							  <button type="submit" class="btn btn-acc">Submit</button>
+						</form>
+		            </div>
+	            </div>
+	        </div>
+	        <div class="col-sm-12 col-md-7">
+	        	<div class="singupcont">
+	        		<h1>we focus on privacy which is most important thing in the world</h1>
+	        	</div>
+	        </div>
+	    </div>
+</body>
+</html>
